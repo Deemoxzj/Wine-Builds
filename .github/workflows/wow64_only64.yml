@@ -23,7 +23,7 @@ jobs:
           sudo apt update
           sudo apt install debootstrap perl git wget xz-utils bubblewrap autoconf
           sudo tar -C /opt -xpf /opt/Bootstraps/bootstraps.tar.xz
-          chmod +x build_wine.sh
+          chmod +x wow64_only64.sh
           export WINE_VERSION="latest"
           export EXPERIMENTAL_WOW64="true"
           WINE_BRANCH=vanilla ./wow64_only64.sh
