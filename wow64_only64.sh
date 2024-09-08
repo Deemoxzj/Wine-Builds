@@ -405,7 +405,7 @@ for build in ${builds_list}; do
 
 		tar -Jcf "${build}".tar.xz "${build}"
 		mv "${build}".tar.xz "${result_dir}"
-	fi
+#	if
 done
 
 rm -rf "${BUILD_DIR}"
