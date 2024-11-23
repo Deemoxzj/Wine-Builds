@@ -1,15 +1,23 @@
 cd ~
-sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list
-sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list.d/ubuntu.sources
-sudo sed -i 's/deb/deb [arch=amd64,armhf]/g' /etc/apt/sources.list
-sudo sed -i 's/deb/deb [arch=amd64,armhf]/g' /etc/apt/sources.list.d/ubuntu.sources
 sudo apt update
 sudo apt full-upgrade
+#
+sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list
+sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list.d/ubuntu.sources
+sudo sed -i 's/deb /deb [arch=amd64,armhf] /g' /etc/apt/sources.list
+sudo sed -i 's/deb /deb [arch=amd64,armhf] /g' /etc/apt/sources.list.d/ubuntu.sources
+sudo sed -i 's/deb-src/deb [arch=amd64,armhf]/g' /etc/apt/sources.list
+sudo sed -i 's/deb-src/deb [arch=amd64,armhf]/g' /etc/apt/sources.list.d/ubuntu.sources
+sudo dpkg --add-architecture armhf
+sudo apt update
+#
 sudo apt install git meson -y 
 sudo apt build-dep build -y
 sudo apt build-dep mesa
 sudo apt install meson llvm-dev llvm clang libclang-dev libpolly-19-dev python3-mako python3-yaml
 sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+sudo apt install libdrm-dev:armhf
+#
 git clone https://gitlab.freedesktop.org/mesa/mesa.git mesa-sources
 #
 echo '[binaries]
