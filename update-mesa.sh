@@ -1,6 +1,8 @@
 cd ~
 sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list
+sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list.d/ubuntu.list
 sudo apt update
+sudo apt full-upgrade
 sudo apt install git meson -y 
 sudo apt build-dep build -y
 sudo apt build-dep mesa
