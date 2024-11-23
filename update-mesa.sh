@@ -6,7 +6,7 @@ sudo apt full-upgrade
 sudo apt install git meson -y 
 sudo apt build-dep build -y
 sudo apt build-dep mesa
-sudo apt install meson llvm-dev llvm clang-dev libclang libpolly-dev python3-mako python3-yaml
+sudo apt install meson llvm-dev llvm clang libclang-dev libpolly-19-dev python3-mako python3-yaml
 sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 git clone https://gitlab.freedesktop.org/mesa/mesa.git mesa-sources
 #
