@@ -1,11 +1,11 @@
 cd ~
 #
-apt update
-apt install apt-transport-https ca-certificates
+sudo apt update
+sudo apt install apt-transport-https ca-certificates
 #
 sudo rm -rf /etc/apt/sources.list
 echo 'deb https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware
-deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware' > /etc/apt/sources.list
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware' | sudo tee /etc/apt/sources.list > /dev/null
 sudo apt update
 DEBIAN_FRONTEND=noninteractive apt full-upgrade -y --allow-unauthenticated
 #
