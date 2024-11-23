@@ -1,4 +1,5 @@
 cd ~
+sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list
 sudo apt update
 sudo apt install git meson -y 
 sudo apt build-dep build -y
