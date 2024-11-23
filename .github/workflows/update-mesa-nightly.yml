@@ -1,0 +1,35 @@
+name: update-mesa.sh CI
+
+on:
+  schedule:
+    - cron:  '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: bootstraps.yml
+          workflow_conclusion: success
+          path: /opt
+      - name: Build Wine
+        run: |
+          sudo apt update
+          sudo apt install debootstrap perl git wget xz-utils bubblewrap autoconf
+          sudo tar -C /opt -xpf /opt/Bootstraps/bootstraps.tar.xz
+          chmod +x wow64_only64.sh
+          export WINE_VERSION="latest"
+          export EXPERIMENTAL_WOW64="true"
+          WINE_BRANCH=vanilla ./update-mesa.sh
+          WINE_BRANCH=staging ./update-mesa.sh
+          sha256sum *.tar.xz
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Wine-Only64-WoW64
+          path: ./*.tar.xz
