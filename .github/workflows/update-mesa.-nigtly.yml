@@ -1,4 +1,4 @@
-name: wow64_only64.sh CI
+name: update-mesa.sh CI
 
 on:
   schedule:
