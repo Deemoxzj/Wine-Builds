@@ -1,4 +1,4 @@
-name: update-mesa.sh CI
+name: update-mesa-armhf.sh CI
 
 on:
   schedule:
