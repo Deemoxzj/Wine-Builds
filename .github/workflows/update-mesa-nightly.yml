@@ -24,10 +24,7 @@ jobs:
           sudo apt install debootstrap perl git wget xz-utils bubblewrap autoconf
           sudo tar -C /opt -xpf /opt/Bootstraps/bootstraps.tar.xz
           chmod +x update-mesa.sh
-          export WINE_VERSION="latest"
-          export EXPERIMENTAL_WOW64="true"
-          WINE_BRANCH=vanilla ./update-mesa.sh
-          WINE_BRANCH=staging ./update-mesa.sh
+          ./update-mesa.sh
           sha256sum *.tar.xz
       - uses: actions/upload-artifact@v3
         with:
