@@ -1,6 +1,5 @@
 cd ~
 sudo apt update
-sudo apt upgrade -y
 sudo apt install git meson -y 
 sudo apt build-dep build -y
 sudo apt build-dep mesa
