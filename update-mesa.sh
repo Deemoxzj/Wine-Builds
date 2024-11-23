@@ -4,10 +4,6 @@ sudo apt full-upgrade
 #
 sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list
 sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list.d/ubuntu.sources
-sudo sed -i 's/deb /deb [arch=amd64,armhf] /g' /etc/apt/sources.list
-sudo sed -i 's/deb /deb [arch=amd64,armhf] /g' /etc/apt/sources.list.d/ubuntu.sources
-sudo sed -i 's/deb-src/deb [arch=amd64,armhf]/g' /etc/apt/sources.list
-sudo sed -i 's/deb-src/deb [arch=amd64,armhf]/g' /etc/apt/sources.list.d/ubuntu.sources
 sudo dpkg --add-architecture armhf
 sudo apt update
 #
