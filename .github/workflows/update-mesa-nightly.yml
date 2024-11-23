@@ -8,7 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container:
+      image: debian:sid   # 使用官方 Debian Sid 镜像作为容器
+      
     steps:
       - uses: actions/checkout@v3
       - name: Download artifact
