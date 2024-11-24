@@ -15,9 +15,11 @@ sudo apt install apt-transport-https ca-certificates
 #转换debiansid
 echo 'deb https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware' | sudo tee /etc/apt/sources.list > /dev/null
-sudo apt update --allow-insecure-repositories
+sudo curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/debian/archive-key.asc | sudo tee /etc/apt/trusted.gpg.d/debian.asc
 echo "adduser adduser/conf/backup boolean false" | sudo debconf-set-selections
+sudo apt update --allow-insecure-repositories
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y --allow-unauthenticated
+sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 #
 #echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular main restricted universe multiverse
 #deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular main restricted universe multiverse
