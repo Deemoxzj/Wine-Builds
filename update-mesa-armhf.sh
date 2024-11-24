@@ -9,7 +9,7 @@ deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular 
 deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular-updates main restricted universe multiverse
 deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular-updates main restricted universe multiverse
 deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular-backports main restricted universe multiverse
-deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular-backports main restricted universe multiverse' | sudo tee /etc/apt/apt-mirrors.txt > /dev/null
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular-backports main restricted universe multiverse' | sudo tee /etc/apt/sources.list > /dev/null
 sudo dpkg --add-architecture armhf
 sudo apt update
 sudo apt full-upgrade -y
