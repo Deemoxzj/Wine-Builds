@@ -4,10 +4,10 @@ sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
 sudo rm -rf /etc/apt/apt-mirrors.txt
-sudo bash -c 'echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware
-deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware" > /etc/apt/apt-mirrors.txt'
-sudo apt update
-DEBIAN_FRONTEND=noninteractive apt full-upgrade -y --allow-unauthenticated
+sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list
+sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/sources.list
+sudo DEBIAN_FRONTEND=noninteractive apt update
+sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade
 #
 sudo dpkg --add-architecture armhf
 sudo apt update
