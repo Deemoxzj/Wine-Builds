@@ -3,9 +3,9 @@ cd ~
 sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
-sudo sed -i 's/jammy/noble/' /etc/apt/sources.list
-sudo sed -i 's/jammy/noble/' /etc/apt/sources.list.d/ubuntu.list
-sudo sed -i 's/jammy/noble/' /etc/apt/api-mirrors.txt
+#sudo sed -i 's/jammy/noble/' /etc/apt/sources.list
+#sudo sed -i 's/jammy/noble/' /etc/apt/sources.list.d/ubuntu.list
+#sudo sed -i 's/jammy/noble/' /etc/apt/api-mirrors.txt
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
@@ -21,12 +21,12 @@ sudo DEBIAN_FRONTEND=noninteractive apt autoremove -y
 #sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y --allow-unauthenticated
 #sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 #
-echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ noble main restricted universe multiverse
-deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ noble main restricted universe multiverse
-deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse
-deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ noble-updates main restricted universe multiverse
-deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse
-deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ noble-backports main restricted universe multiverse' | sudo tee /etc/apt/sources.list > /dev/null
+echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse' | sudo tee /etc/apt/sources.list > /dev/null
 #开启多架构支持
 sudo dpkg --add-architecture armhf
 sudo apt update
