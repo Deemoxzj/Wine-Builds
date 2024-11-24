@@ -3,16 +3,15 @@ cd ~
 sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
-sudo rm -rf /etc/apt/apt-mirrors.txt
+sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list
 sudo apt update
 sudo apt full-upgrade -y
 sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/sources.list
 sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/sources.list.d/ubuntu.list
 sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/apt-mirrors.txt
-sudo apt update
-#
 sudo dpkg --add-architecture armhf
 sudo apt update
+#
 sudo DEBIAN_FRONTEND=noninteractive apt install git meson -y 
 sudo DEBIAN_FRONTEND=noninteractive apt build-dep mesa
 sudo DEBIAN_FRONTEND=noninteractive apt install meson llvm-19-dev:armhf llvm-19:armhf clang-19:armhf libclang-19-dev:armhf libpolly-19-dev:armhf -y
