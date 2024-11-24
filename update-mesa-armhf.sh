@@ -3,12 +3,16 @@ cd ~
 sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
-sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list
+#sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list
+sudo echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse' >/etc/apt/sources.list
 sudo apt update
 sudo apt full-upgrade -y
-sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/sources.list
-sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/sources.list.d/ubuntu.list
-sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/apt-mirrors.txt
+
 sudo dpkg --add-architecture armhf
 sudo apt update
 #
