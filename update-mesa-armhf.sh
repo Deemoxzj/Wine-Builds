@@ -4,12 +4,18 @@ sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
 #sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list
-sudo echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
 deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
 deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
 deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
 deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse
-deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse' >/etc/apt/sources.list
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse' | sudo tee /etc/apt/sources.list > /dev/null
+echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse
+deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse' | sudo tee /etc/apt/apt-mirrors.txt > /dev/null
 sudo apt update
 sudo apt full-upgrade -y
 
