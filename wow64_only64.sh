@@ -336,15 +336,14 @@ export CXXFLAGS="${CFLAGS_X64}"
 export CROSSCFLAGS="${CROSSCFLAGS_X64}"
 export CROSSCXXFLAGS="${CROSSCFLAGS_X64}"
 
-wget -O /opt/ https://github.com/bylaws/llvm-mingw/releases/download/20240929/llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64.tar.xz
-tar -xvf /opt/llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64.tar.xz /opt/
-export PATH=/opt/llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64/bin:$PATH
-
 sudo apt-get install clang -y
 sudo apt build-dep wine -y
 
 mkdir "${BUILD_DIR}"/build64
 cd "${BUILD_DIR}"/build64 || exit
+wget https://github.com/bylaws/llvm-mingw/releases/download/20240929/llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64.tar.xz
+tar -xvf /opt/llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64.tar.xz
+export PATH="${BUILD_DIR}"/build64/llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64/bin:$PATH
 # ${BWRAP64} "${BUILD_DIR}"/wine/configure --enable-win64 ${WINE_BUILD_OPTIONS} --prefix "${BUILD_DIR}"/wine-"${BUILD_NAME}"-amd64
 #${BWRAP64} "${BUILD_DIR}"/wine/configure --enable-archs=i386,x86_64 ${WINE_BUILD_OPTIONS} --prefix "${BUILD_DIR}"/wine-"${BUILD_NAME}"-amd64
 ${BWRAP64} "${BUILD_DIR}"/wine/configure --enable-archs=x86_64,i386,arm,aarch64 ${WINE_BUILD_OPTIONS} --prefix "${BUILD_DIR}"/wine-"${BUILD_NAME}"-amd64
