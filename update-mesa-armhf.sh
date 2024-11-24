@@ -40,6 +40,7 @@ sudo apt install python3-mako python3-yaml -y
 sudo apt install flex 
 sudo apt-get install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf -y
 sudo apt-get install pkg-config:armhf -y
+sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 cd ~
 #wget http://launchpadlibrarian.net/732839854/perl-base_5.38.2-5_armhf.deb
 #sudo dpkg -i perl-base_5.38.2-5_armhf.deb
