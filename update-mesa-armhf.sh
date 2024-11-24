@@ -3,9 +3,12 @@ cd ~
 sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
-#sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list
+sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list
+sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list.d/ubuntu.list
+sudo sed -i 's/jammy/oracular/' /etc/apt/api-mirrors.txt
 sudo apt update
-sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
+sudo apt full-upgrade -y
+#
 echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular main restricted universe multiverse
 deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular main restricted universe multiverse
 deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular-updates main restricted universe multiverse
