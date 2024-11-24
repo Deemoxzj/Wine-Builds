@@ -338,6 +338,7 @@ export CROSSCXXFLAGS="${CROSSCFLAGS_X64}"
 
 sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 sudo apt-get install mingw-w64
+sudo apt-get install clang
 wget -O "${BUILD_DIR}"/ https://github.com/bylaws/llvm-mingw/releases/download/20240929/llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64.tar.xz
 tar -xvf llvm-mingw-20240929-ucrt-ubuntu-20.04-x86_64.tar.xz "${BUILD_DIR}"/
 export ${BUILD_DIR}/llvm-mingw-20240929-ucrt-ubuntu-20.04-aarch64/bin:$PATH
