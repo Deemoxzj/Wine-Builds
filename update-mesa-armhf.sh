@@ -7,7 +7,10 @@ sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list
 sudo sed -i 's/jammy/oracular/' /etc/apt/sources.list.d/ubuntu.list
 sudo sed -i 's/jammy/oracular/' /etc/apt/api-mirrors.txt
 sudo apt update
-sudo apt full-upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt autoremove -y
 #
 echo 'deb [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular main restricted universe multiverse
 deb-src [arch=armhf] http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ oracular main restricted universe multiverse
@@ -20,7 +23,7 @@ sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt --fix-broken install -y
 #
 sudo DEBIAN_FRONTEND=noninteractive apt install git meson -y 
-sudo DEBIAN_FRONTEND=noninteractive apt build-dep mesa
+#sudo DEBIAN_FRONTEND=noninteractive apt build-dep mesa
 sudo DEBIAN_FRONTEND=noninteractive apt install meson llvm-19-dev:armhf llvm-19:armhf clang:armhf libclang-19-dev:armhf libpolly-19-dev:armhf -y
 #sudo DEBIAN_FRONTEND=noninteractive apt install meson llvm-dev:armhf llvm:armhf clang:armhf libclang-dev:armhf libpolly-dev:armhf -y
 sudo apt install python3-mako python3-yaml -y
