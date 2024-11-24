@@ -5,9 +5,11 @@ sudo apt install apt-transport-https ca-certificates
 #
 sudo rm -rf /etc/apt/apt-mirrors.txt
 sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list
+sudo sed -i 's/jammy/oracular/g' /etc/apt/sources.list.d/ubuntu.list
+sudo apt update
+sudo apt full-upgrade -y
 sudo sed -i 's/^deb /deb [arch=armhf] /' /etc/apt/sources.list
-sudo DEBIAN_FRONTEND=noninteractive apt update
-sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade
+sudo apt update
 #
 sudo dpkg --add-architecture armhf
 sudo apt update
