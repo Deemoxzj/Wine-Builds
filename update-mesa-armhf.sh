@@ -18,10 +18,11 @@ sudo apt update
 #
 sudo DEBIAN_FRONTEND=noninteractive apt install git meson -y 
 sudo DEBIAN_FRONTEND=noninteractive apt build-dep mesa
-sudo DEBIAN_FRONTEND=noninteractive apt install meson llvm-19-dev:armhf llvm-19:armhf clang-19:armhf libclang-19-dev:armhf libpolly-19-dev:armhf -y
+#sudo DEBIAN_FRONTEND=noninteractive apt install meson llvm-19-dev:armhf llvm-19:armhf clang:armhf libclang-19-dev:armhf libpolly-19-dev:armhf -y
+sudo DEBIAN_FRONTEND=noninteractive apt install meson llvm-dev:armhf llvm:armhf clang:armhf libclang-dev:armhf libpolly-dev:armhf -y
 sudo apt install python3-mako python3-yaml -y
 sudo apt install flex 
-sudo apt install gcc-arm-14-linux-gnueabihf g++-14-arm-linux-gnueabihf -y
+#sudo apt install gcc-arm-14-linux-gnueabihf g++-14-arm-linux-gnueabihf -y
 sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 sudo autoremove -y
 sudo apt-get install pkg-config:armhf
