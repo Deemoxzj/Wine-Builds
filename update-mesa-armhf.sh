@@ -65,12 +65,24 @@ endian = 'little'" > ~/cross_armhf.txt
 cd mesa-sources
 patch -p1 < *.patch
 #
+sudo apt-get install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+sudo apt-get install gcc-13-arm-linux-gnueabihf g++-13-arm-linux-gnueabihf -y
+sudo apt-get install gcc-12-arm-linux-gnueabihf g++-12-arm-linux-gnueabihf -y
 meson b32 --cross-file=~/cross_armhf.txt --libdir=lib/arm-linux-gnueabihf -Dgallium-drivers=freedreno,zink,virgl,d3d12,softpipe  -Dvulkan-drivers=freedreno -Dgallium-nine=false -Dfreedreno-kmds=kgsl,msm -Dglx=dri -Dxlib-lease=enabled -Dplatforms=x11,wayland -Dvulkan-beta=true -Dvideo-codecs=all -Dglx-direct=true -Dtools=drm-shim,freedreno -Dopengl=true -Dosmesa=true -Dgles1=enabled -Dgles2=enabled -Degl-native-platform=x11 -Degl=enabled -Dpower8=enabled -Dgallium-d3d12-video=enabled -Dgallium-d3d12-graphics=enabled  -Dxmlconfig=enabled -Dgbm=enabled --prefix=~/mesa/
 sudo apt install llvm:armhf llvm-dev:armhf libelf-dev:armhf bison:armhf byacc:armhf -y
+sudo apt-get install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+sudo apt-get install gcc-13-arm-linux-gnueabihf g++-13-arm-linux-gnueabihf -y
+sudo apt-get install gcc-12-arm-linux-gnueabihf g++-12-arm-linux-gnueabihf -y
 meson b32 --cross-file=~/cross_armhf.txt --libdir=lib/arm-linux-gnueabihf -Dgallium-drivers=freedreno,zink,virgl,d3d12,softpipe  -Dvulkan-drivers=freedreno -Dgallium-nine=false -Dfreedreno-kmds=kgsl,msm -Dglx=dri -Dxlib-lease=enabled -Dplatforms=x11,wayland -Dvulkan-beta=true -Dvideo-codecs=all -Dglx-direct=true -Dtools=drm-shim,freedreno -Dopengl=true -Dosmesa=true -Dgles1=enabled -Dgles2=enabled -Degl-native-platform=x11 -Degl=enabled -Dpower8=enabled -Dgallium-d3d12-video=enabled -Dgallium-d3d12-graphics=enabled  -Dxmlconfig=enabled -Dgbm=enabled --prefix=~/mesa/
 sudo apt install python3-mako -y
+sudo apt-get install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+sudo apt-get install gcc-13-arm-linux-gnueabihf g++-13-arm-linux-gnueabihf -y
+sudo apt-get install gcc-12-arm-linux-gnueabihf g++-12-arm-linux-gnueabihf -y
 meson b32 --cross-file=~/cross_armhf.txt --libdir=lib/arm-linux-gnueabihf -Dgallium-drivers=freedreno,zink,virgl,d3d12,softpipe  -Dvulkan-drivers=freedreno -Dgallium-nine=false -Dfreedreno-kmds=kgsl,msm -Dglx=dri -Dxlib-lease=enabled -Dplatforms=x11,wayland -Dvulkan-beta=true -Dvideo-codecs=all -Dglx-direct=true -Dtools=drm-shim,freedreno -Dopengl=true -Dosmesa=true -Dgles1=enabled -Dgles2=enabled -Degl-native-platform=x11 -Degl=enabled -Dpower8=enabled -Dgallium-d3d12-video=enabled -Dgallium-d3d12-graphics=enabled  -Dxmlconfig=enabled -Dgbm=enabled --prefix=~/mesa/
 sudo apt install python3-yaml -y
+sudo apt-get install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+sudo apt-get install gcc-13-arm-linux-gnueabihf g++-13-arm-linux-gnueabihf -y
+sudo apt-get install gcc-12-arm-linux-gnueabihf g++-12-arm-linux-gnueabihf -y
 meson b32 --cross-file=~/cross_armhf.txt --libdir=lib/arm-linux-gnueabihf -Dgallium-drivers=freedreno,zink,virgl,d3d12,softpipe  -Dvulkan-drivers=freedreno -Dgallium-nine=false -Dfreedreno-kmds=kgsl,msm -Dglx=dri -Dxlib-lease=enabled -Dplatforms=x11,wayland -Dvulkan-beta=true -Dvideo-codecs=all -Dglx-direct=true -Dtools=drm-shim,freedreno -Dopengl=true -Dosmesa=true -Dgles1=enabled -Dgles2=enabled -Degl-native-platform=x11 -Degl=enabled -Dpower8=enabled -Dgallium-d3d12-video=enabled -Dgallium-d3d12-graphics=enabled  -Dxmlconfig=enabled -Dgbm=enabled --prefix=~/mesa/
 cd b32
 ninja install -j$(nproc)
