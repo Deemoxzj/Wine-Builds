@@ -3,9 +3,19 @@ cd ~
 sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
-sudo sed -i 's/jammy/noble/' /etc/apt/sources.list
+#sudo sed -i 's/jammy/noble/' /etc/apt/sources.list
 #sudo sed -i 's/jammy/noble/' /etc/apt/sources.list.d/ubuntu.list
 #sudo sed -i 's/jammy/noble/' /etc/apt/api-mirrors.txt
+echo 'deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-updates main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-backports main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
+deb-src http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-proposed main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-proposed main restricted universe multiverse' | sudo tee /etc/apt/sources.list > /dev/null
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
