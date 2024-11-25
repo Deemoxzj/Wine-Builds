@@ -12,7 +12,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt autoremove -y
 #
-sudo apt-get install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf -y
+sudo apt install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf -y
 sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 #转换debiansid
 #echo 'deb https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware
@@ -40,8 +40,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt install git meson -y
 sudo DEBIAN_FRONTEND=noninteractive apt install meson llvm-dev:armhf llvm:armhf clang:armhf libclang-dev:armhf libpolly-dev:armhf -y
 sudo apt install python3-mako python3-yaml -y
 sudo apt install flex  -y
-#sudo apt-get install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf -y
-sudo apt-get install pkg-config:armhf -y
+#sudo apt install gcc-14-arm-linux-gnueabihf g++-14-arm-linux-gnueabihf -y
+sudo apt install pkg-config:armhf -y
 #sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 cd ~
 #wget http://launchpadlibrarian.net/732839854/perl-base_5.38.2-5_armhf.deb
