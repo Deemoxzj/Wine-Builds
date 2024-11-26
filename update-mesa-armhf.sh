@@ -22,7 +22,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 #
 sudo DEBIAN_FRONTEND=noninteractive apt install git meson -y 
-sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+#sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 sudo DEBIAN_FRONTEND=noninteractive apt build-dep mesa -y
 sudo apt install python3-mako python3-yaml -y
 sudo apt install flex  -y
@@ -55,6 +55,7 @@ cd ~
 #wget http://launchpadlibrarian.net/732839854/perl-base_5.38.2-5_armhf.deb
 #sudo dpkg -i perl-base_5.38.2-5_armhf.deb
 sudo apt install cmake git wget zlib1g-dev:armhf libexpat1-dev:armhf libdrm-dev:armhf libx11-dev:armhf libxext-dev:armhf libxdamage-dev:armhf libxcb-glx0-dev:armhf libx11-xcb-dev:armhf libxcb-dri2-0-dev:armhf libxcb-dri3-dev:armhf libxcb-present-dev:armhf libxshmfence-dev:armhf libxxf86vm-dev:armhf libxrandr-dev:armhf libwayland-dev:armhf wayland-protocols:armhf libwayland-egl-backend-dev:armhf libxcb-shm0-dev:armhf pkg-config:armhf -y
+sudo apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 #
 cd ~
 git clone https://gitlab.freedesktop.org/mesa/mesa.git mesa-sources
