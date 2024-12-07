@@ -235,8 +235,8 @@ else
 	else
 		BUILD_NAME="${WINE_VERSION}"
 
-		wget -q --show-progress "https://dl.winehq.org/wine/source/${WINE_URL_VERSION}/wine-${WINE_VERSION}.tar.xz"
-
+		#wget -q --show-progress "https://dl.winehq.org/wine/source/${WINE_URL_VERSION}/wine-${WINE_VERSION}.tar.xz"
+wget -q --show-progress "https://dl.winehq.org/wine/source/10.0/wine-${WINE_VERSION}.tar.xz"
 		tar xf "wine-${WINE_VERSION}.tar.xz"
 		mv "wine-${WINE_VERSION}" wine
 	fi
