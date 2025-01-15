@@ -26,6 +26,10 @@ libv4l-dev libasound2-dev libncurses5-dev libudev-dev \
 libdbus-1-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
 libpcap-dev libsdl1.2-dev libgl1-mesa-dev libosmesa6-dev \
 libvulkan-dev libssl-dev -y
+sudo apt install libsane-dev -y
+sudo apt-get install libavcodec-dev libavformat-dev libavutil-dev -y
+sudo apt install '*oss*' -y
+sudo apt install '*FFmpeg*' -y
 #
 git clone https://gitlab.winehq.org/wine/wine.git wine-source
 git clone https://gitlab.winehq.org/wine/wine-staging.git
