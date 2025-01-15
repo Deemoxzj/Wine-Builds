@@ -36,3 +36,6 @@ cd build
 ../configure --enable-archs=i386,x86_64 --prefix=/opt/wow64-staging/
 make -j$(nproc)
 make install
+#
+cd /opt/
+tar -cjvf wow64-staging.tar.gz wow64-staging
