@@ -28,8 +28,9 @@ libpcap-dev libsdl1.2-dev libgl1-mesa-dev libosmesa6-dev \
 libvulkan-dev libssl-dev -y
 sudo apt install libsane-dev -y
 sudo apt-get install libavcodec-dev libavformat-dev libavutil-dev -y
-sudo apt install '*oss*' '*-oss-*' '*oss4*' '*oss4-*' -y
-sudo apt install '*FFmpeg*' '*-ffmpeg-*' -y
+sudo apt install '*oss4*' '*oss4-*' '*ossv4-*' '*ossv4-*' -y
+sudo apt install 'FFmpeg*' '*ffmpeg-*' -y
+sudo apt install 'libnetapi*-*' 'libnetapi*' -y
 #
 git clone https://gitlab.winehq.org/wine/wine.git wine-source
 git clone https://gitlab.winehq.org/wine/wine-staging.git
