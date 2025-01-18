@@ -43,4 +43,4 @@ make -j$(nproc)
 make install
 #
 cd /opt/
-tar -cjvf wow64-staging.tar.gz wow64-staging
+tar -cjvf wow64-staging.tar.xz wow64-staging
