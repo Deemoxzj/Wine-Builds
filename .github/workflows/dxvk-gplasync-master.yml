@@ -18,7 +18,7 @@ jobs:
           workflow: bootstraps.yml
           workflow_conclusion: success
           path: /opt
-      - name: Build Wine
+      - name: Build dxvk-gplasync
         run: |
           sudo apt update
           sudo apt install debootstrap perl git wget xz-utils bubblewrap autoconf
