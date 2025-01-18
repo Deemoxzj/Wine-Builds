@@ -23,9 +23,10 @@ libjpeg-dev libpng-dev libtiff-dev libx11-dev libxext-dev \
 libxinerama-dev libxrandr-dev libxi-dev libxxf86vm-dev \
 libcups2-dev libgphoto2-dev libsqlite3-dev libxml2-dev \
 libv4l-dev libasound2-dev libncurses5-dev libudev-dev \
-libdbus-1-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
+libdbus-1-dev  \
 libpcap-dev libsdl1.2-dev libgl1-mesa-dev libosmesa6-dev \
 libvulkan-dev libssl-dev -y
+#sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 #sudo apt install mingw-w64 -y
 sudo apt install libsane-dev -y
 sudo apt install libavcodec-dev libavformat-dev libavutil-dev -y
