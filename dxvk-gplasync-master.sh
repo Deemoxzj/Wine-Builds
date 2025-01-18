@@ -1,4 +1,4 @@
-sudo sudo apt install glslang-tools
+sudo sudo apt install glslang-tools meson -y
 cd ~
 git clone --depth 1 https://gitlab.com/Ph42oN/dxvk-gplasync.git dxvk-gplasync
 git clone --recursive https://github.com/doitsujin/dxvk.git dxvk
