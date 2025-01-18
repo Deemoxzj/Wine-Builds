@@ -5,16 +5,16 @@ apt install sudo -y
 sudo apt update
 sudo apt install apt-transport-https ca-certificates
 #
-echo 'deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble main restricted universe multiverse
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-updates main restricted universe multiverse
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-updates main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-backports main restricted universe multiverse
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-backports main restricted universe multiverse
-deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
-deb-src http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-proposed main restricted universe multiverse
-deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-proposed main restricted universe multiverse' | sudo tee /etc/apt/sources.list > /dev/null
+echo 'deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular-updates main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular-updates main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular-backports main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ oracular-security main restricted universe multiverse
+deb-src http://security.ubuntu.com/ubuntu/ oracular-security main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular-proposed main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ oracular-proposed main restricted universe multiverse' | sudo tee /etc/apt/sources.list > /dev/null
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 sudo apt build-dep wine -y
@@ -26,11 +26,13 @@ libv4l-dev libasound2-dev libncurses5-dev libudev-dev \
 libdbus-1-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
 libpcap-dev libsdl1.2-dev libgl1-mesa-dev libosmesa6-dev \
 libvulkan-dev libssl-dev -y
+sudo apt install mingw-w64 -y
 sudo apt install libsane-dev -y
-sudo apt-get install libavcodec-dev libavformat-dev libavutil-dev libsmbclient-dev samba-dev libnetapi0 samba-libs libsamba-dev -y
-sudo apt install '*oss4*' '*oss4-*' '*ossv4-*' '*ossv4-*' 'oss4*' 'oss4-*' liboss4-salsa-dev liboss4-salsa2 -y
-sudo apt install 'FFmpeg*' '*ffmpeg-*' -y
-sudo apt install 'libnetapi*-*' 'libnetapi*' -y
+sudo apt install libavcodec-dev libavformat-dev libavutil-dev -y
+sudo apt install oss4-base oss4-dev -y
+sudo apt install libsmbclient-dev -y
+sudo apt install samba samba-common samba-dev -y
+
 #
 git clone https://gitlab.winehq.org/wine/wine.git wine-source
 git clone https://gitlab.winehq.org/wine/wine-staging.git
