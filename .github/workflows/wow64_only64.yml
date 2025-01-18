@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-oracular
+    runs-on: ubuntu-lastest
 
     steps:
       - uses: actions/checkout@v3
