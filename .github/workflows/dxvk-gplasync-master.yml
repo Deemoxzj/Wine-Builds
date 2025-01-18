@@ -23,7 +23,8 @@ jobs:
           sudo apt update
           sudo apt install debootstrap perl git wget xz-utils bubblewrap autoconf
           sudo tar -C /opt -xpf /opt/Bootstraps/bootstraps.tar.xz
-          sudo sudo apt install glslang-tools meson -y
+          sudo apt install glslang-tools meson -y
+          sudo apt isntall mingw-w64 build-essential -y 
           cd ~
           git clone --depth 1 https://gitlab.com/Ph42oN/dxvk-gplasync.git dxvk-gplasync
           git clone --recursive https://github.com/doitsujin/dxvk.git dxvk
