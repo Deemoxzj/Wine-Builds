@@ -23,11 +23,16 @@ jobs:
           sudo apt update
           sudo apt install debootstrap perl git wget xz-utils bubblewrap autoconf
           sudo tar -C /opt -xpf /opt/Bootstraps/bootstraps.tar.xz
-          chmod +x dxvk-gplasync-master.sh
-          export WINE_VERSION="latest"
-          export EXPERIMENTAL_WOW64="true"
-          WINE_BRANCH=vanilla ./dxvk-gplasync-master.sh
-          WINE_BRANCH=staging ./dxvk-gplasync-master.sh
+          sudo sudo apt install glslang-tools meson -y
+          cd ~
+          git clone --depth 1 https://gitlab.com/Ph42oN/dxvk-gplasync.git dxvk-gplasync
+          git clone --recursive https://github.com/doitsujin/dxvk.git dxvk
+          cp ~/dxvk-gplasync/patches/dxvk-gplasync-master.patch ~/dxvk
+          cd dxvk
+          patch -p 1 -i dxvk-gplasync-master.patch
+          ./package-release.sh master /opt/dxvk-gplasync-master --no-package
+          cd /opt/
+          tar -cjvf dxvk-gplasync-master.tar.xz dxvk-gplasync-master
           sha256sum /opt/*.tar.xz
       - uses: actions/upload-artifact@v3
         with:
