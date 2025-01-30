@@ -1,4 +1,4 @@
-name: wow64_only64.sh CI
+name: wow64_nightly.sh CI
 
 on:
   schedule:
